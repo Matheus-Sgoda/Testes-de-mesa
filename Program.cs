@@ -97,7 +97,7 @@
             Console.WriteLine("|0 - Encerrar programa           |");
             Console.WriteLine("|1 - Escolher outro teste de mesa|\n");
             var input = Console.ReadLine();
-            //teste
+            //teste teste
             int.TryParse(input, out refaser);
         }while (refaser>0);
     }
