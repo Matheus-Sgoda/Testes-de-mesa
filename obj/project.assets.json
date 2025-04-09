@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mhsch\\.nuget\\packages\\": {}
+    "C:\\Users\\Matheussgoda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mhsch\\Desktop\\Codigos\\Testes de mesa\\Testes de mesa.csproj",
+      "projectUniqueName": "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Testes de mesa.csproj",
       "projectName": "Testes de mesa",
-      "projectPath": "C:\\Users\\mhsch\\Desktop\\Codigos\\Testes de mesa\\Testes de mesa.csproj",
-      "packagesPath": "C:\\Users\\mhsch\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mhsch\\Desktop\\Codigos\\Testes de mesa\\obj\\",
+      "projectPath": "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Testes de mesa.csproj",
+      "packagesPath": "C:\\Users\\Matheussgoda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mhsch\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Matheussgoda\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"

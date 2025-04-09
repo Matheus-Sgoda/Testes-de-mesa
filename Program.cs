@@ -8,41 +8,57 @@
         int aux = c;
         c = c - 40;
         int[] v = new int[4];
-
-        Console.Write(a);
-        Console.Write(b);
-        Console.Write(aux);
-        Console.Write(c);
-
+        Console.WriteLine("\n+-----------------------------------+");
+        Console.WriteLine($"A é: " + a);
+        Console.WriteLine($"B é: " + b);
+        Console.WriteLine($"C1 é: " + aux);
+        Console.WriteLine($"C2 é: " + c);
+        Console.WriteLine("+-----------------------------------+\n");
         for (int i = 0; i < v.Length; i++)
         {
             if (i == 3)
             {
                 v[i] = a + b + c;
-                Console.Write("V");
+                Console.WriteLine($"V[{i}]=V");
             }
             else
             {
-                Console.Write("F");
+                Console.WriteLine($"V[{i}]=F");
             }
         }
+        Console.WriteLine("\n+-----------------------------------+");
     }
 
     static void EX02()
     {
         int a = 2;
-        int[] v = new int[10];
-
-        while (a <= 6)
+        int[] v = new int[7];
+        Console.WriteLine("\n\n");
+        Console.WriteLine("+-----------------------------------+");
+        while (a < 6)
         {
             v[a] = 10 * a;
+            Console.WriteLine($"Indice:{a} do vetor={v[a]}");
             a += 1;
+            
         }
-        
-        for (int i = 0; i <10; i++)
+        Console.WriteLine("+-----------------------------------+");   
+    }
+
+    static void EX03()
+    {
+        int a=7;
+        int b=a-6;
+        int []v= new int[6];
+        Console.WriteLine("\n\n");
+        Console.WriteLine("+-----------------------------------+");
+        while (b<a)
         {
-            Console.WriteLine(v[i]);
+            v[b]=b+a;
+            Console.WriteLine($"Indice:{b} do vetor={v[b]}");
+            b=b+2;
         }
+        Console.WriteLine("+-----------------------------------+");
     }
 
 
@@ -70,7 +86,7 @@
                 break;
 
                 case "3":
-                    EX02();
+                    EX03();
                 break;
                 
                 default:
@@ -81,6 +97,7 @@
             Console.WriteLine("|0 - Encerrar programa           |");
             Console.WriteLine("|1 - Escolher outro teste de mesa|\n");
             var input = Console.ReadLine();
+            //teste
             int.TryParse(input, out refaser);
         }while (refaser>0);
     }
