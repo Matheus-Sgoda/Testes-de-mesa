@@ -1,0 +1,14 @@
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\bin\Debug\net9.0\Testes de mesa.exe
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\bin\Debug\net9.0\Testes de mesa.deps.json
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\bin\Debug\net9.0\Testes de mesa.runtimeconfig.json
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\bin\Debug\net9.0\Testes de mesa.dll
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\bin\Debug\net9.0\Testes de mesa.pdb
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.AssemblyInfoInputs.cache
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.AssemblyInfo.cs
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.csproj.CoreCompileInputs.cache
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.dll
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\refint\Testes de mesa.dll
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.pdb
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\Testes de mesa.genruntimeconfig.cache
+C:\Users\mhsch\Desktop\Codigos\Testes de mesa\obj\Debug\net9.0\ref\Testes de mesa.dll
