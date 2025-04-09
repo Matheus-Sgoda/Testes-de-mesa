@@ -9,10 +9,10 @@
         c = c - 40;
         int[] v = new int[4];
 
-        Console.WriteLine(a);
-        Console.WriteLine(b);
-        Console.WriteLine(aux);
-        Console.WriteLine(c);
+        Console.Write(a);
+        Console.Write(b);
+        Console.Write(aux);
+        Console.Write(c);
 
         for (int i = 0; i < v.Length; i++)
         {
@@ -31,22 +31,57 @@
     static void EX02()
     {
         int a = 2;
-        int[] v = new int[5];
+        int[] v = new int[10];
 
-        while (a < 6)
+        while (a <= 6)
         {
             v[a] = 10 * a;
             a += 1;
         }
-        Console.WriteLine(a);
+        
+        for (int i = 0; i <10; i++)
+        {
+            Console.WriteLine(v[i]);
+        }
     }
 
 
 
     static void Main()
     {
-        EX01();
-        EX02();
+        int refaser;
+        
+        do 
+        {
+            Console.WriteLine("\n|Informe qual Teste de mesa voce deseja ver:|");
+            Console.WriteLine("|1 - Teste de mesa 01|");
+            Console.WriteLine("|2 - Teste de mesa 02|");
+            Console.WriteLine("|3 - Teste de mesa 03|\n");
+            var opcao = Console.ReadLine();
 
+            switch(opcao)
+            {
+                case "1":
+                    EX01();
+                break;
+                
+                case "2":
+                    EX02();
+                break;
+
+                case "3":
+                    EX02();
+                break;
+                
+                default:
+                    Console.WriteLine("Caracter invalido.");
+                break;
+            }
+            Console.WriteLine("\n|Deseja ver outro teste de mese ?|");
+            Console.WriteLine("|0 - Encerrar programa           |");
+            Console.WriteLine("|1 - Escolher outro teste de mesa|\n");
+            var input = Console.ReadLine();
+            int.TryParse(input, out refaser);
+        }while (refaser>0);
     }
 }
