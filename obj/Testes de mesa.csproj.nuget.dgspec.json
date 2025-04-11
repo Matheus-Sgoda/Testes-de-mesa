@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Teste01\\Testes de mesa.csproj": {}
+    "C:\\Users\\Matheussgoda\\Desktop\\Testes de mesa\\Teste_Mesa\\Testes de mesa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Teste01\\Testes de mesa.csproj": {
+    "C:\\Users\\Matheussgoda\\Desktop\\Testes de mesa\\Teste_Mesa\\Testes de mesa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Teste01\\Testes de mesa.csproj",
+        "projectUniqueName": "C:\\Users\\Matheussgoda\\Desktop\\Testes de mesa\\Teste_Mesa\\Testes de mesa.csproj",
         "projectName": "Testes de mesa",
-        "projectPath": "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Teste01\\Testes de mesa.csproj",
+        "projectPath": "C:\\Users\\Matheussgoda\\Desktop\\Testes de mesa\\Teste_Mesa\\Testes de mesa.csproj",
         "packagesPath": "C:\\Users\\Matheussgoda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheussgoda\\Desktop\\Aprendizagem\\Testes de mesa\\Teste01\\obj\\",
+        "outputPath": "C:\\Users\\Matheussgoda\\Desktop\\Testes de mesa\\Teste_Mesa\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matheussgoda\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,68 +1,7 @@
-﻿public class Mesa01
+﻿using System;
+
+class Program
 {
-    static void EX01()
-    {
-        int a = 10;
-        int b = 20;
-        int c = (a + b) / 2;
-        int aux = c;
-        c = c - 40;
-        int[] v = new int[4];
-        Console.WriteLine("\n+-----------------------------------+");
-        Console.WriteLine($"A é: " + a);
-        Console.WriteLine($"B é: " + b);
-        Console.WriteLine($"C1 é: " + aux);
-        Console.WriteLine($"C2 é: " + c);
-        Console.WriteLine("+-----------------------------------+\n");
-        for (int i = 0; i < v.Length; i++)
-        {
-            if (i == 3)
-            {
-                v[i] = a + b + c;
-                Console.WriteLine($"V[{i}]=V");
-            }
-            else
-            {
-                Console.WriteLine($"V[{i}]=F");
-            }
-        }
-        Console.WriteLine("\n+-----------------------------------+");
-    }
-
-    static void EX02()
-    {
-        int a = 2;
-        int[] v = new int[7];
-        Console.WriteLine("\n\n");
-        Console.WriteLine("+-----------------------------------+");
-        while (a < 6)
-        {
-            v[a] = 10 * a;
-            Console.WriteLine($"Indice:{a} do vetor={v[a]}");
-            a += 1;
-            
-        }
-        Console.WriteLine("+-----------------------------------+");   
-    }
-
-    static void EX03()
-    {
-        int a=7;
-        int b=a-6;
-        int []v= new int[6];
-        Console.WriteLine("\n\n");
-        Console.WriteLine("+-----------------------------------+");
-        while (b<a)
-        {
-            v[b]=b+a;
-            Console.WriteLine($"Indice:{b} do vetor={v[b]}");
-            b=b+2;
-        }
-        Console.WriteLine("+-----------------------------------+");
-    }
-
-
-
     static void Main()
     {
         int refaser;
@@ -78,27 +17,83 @@
             switch(opcao)
             {
                 case "1":
-                    EX01();
-                break;
+                    Console.WriteLine("Informe qual exercicio Você deseja:");
+                    Console.WriteLine("1 - EX 01");
+                    Console.WriteLine("2 - EX 02");
+                    Console.WriteLine("3 - EX 03");
+                    var opcao_1 = Console.ReadLine();
+
+                    switch (opcao_1)
+                    {   
+                        case "1":
+                            Mesa01_1.EX01();
+                            break;
+                        
+                        case "2":
+                            Mesa01_2.EX02();
+                            break;
+                            
+                        case "3":
+                            Mesa01_3.EX03();  
+                            break;
+                        default:
+                            Console.WriteLine("Caracter informado não suportado.");
+                            break;
+                    }
+                    break;
                 
                 case "2":
-                    EX02();
-                break;
+                    Console.WriteLine("Informe qual exercicio Você deseja:");
+                    Console.WriteLine("1 - EX 01");
+                    Console.WriteLine("2 - EX 02");
+                    Console.WriteLine("3 - EX 03");
+                    Console.WriteLine("4 - EX 04");
+                    Console.WriteLine("5 - EX 05");
+                    var opcao_2 = Console.ReadLine();
+
+                    switch (opcao_2)
+                    {   
+                        case "1":
+                            Mesa02_1.EX01();
+                            break;
+                        
+                        case "2":
+                            Mesa02_2.EX02();
+                            break;
+                            
+                        case "3":
+                            Mesa02_3.EX03();  
+                            break;
+
+                        case "4":
+                            Mesa02_4.EX04();  
+                            break;    
+
+                        case "5":
+                            Mesa02_5.EX05();  
+                            break;    
+
+                        default:
+                            Console.WriteLine("Caracter informado não suportado.");
+                            break;
+                    }
+                    break;
 
                 case "3":
-                    EX03();
-                break;
+                    Mesa03.EX();
+                    
+                    break;
                 
                 default:
                     Console.WriteLine("Caracter invalido.");
-                break;
+                    break;
             }
+            
             Console.WriteLine("\n|Deseja ver outro teste de mese ?|");
             Console.WriteLine("|0 - Encerrar programa           |");
             Console.WriteLine("|1 - Escolher outro teste de mesa|\n");
             var input = Console.ReadLine();
-            //teste teste
             int.TryParse(input, out refaser);
-        }while (refaser>0);
+        } while (refaser > 0);
     }
 }
