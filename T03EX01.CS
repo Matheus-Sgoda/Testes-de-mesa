@@ -1,66 +1,102 @@
+using System;
+
 public class Mesa03
 {
     public static void EX()
     {
-    
+        decimal retiradaValor = 0;
+        double valorAtual;
+
         Console.WriteLine("+=================================================+");
-        Console.WriteLine("Informe o valor que você tem agora:");
-        decimal inicial = decimal.Parse(Console.ReadLine());
-
-        Console.WriteLine("\nInforme a taxa de juros:");
-        decimal taxa = decimal.Parse(Console.ReadLine());
-        taxa = taxa / 100;
-
-        Console.WriteLine("\nInforme a quantidade de anos:");
-        int anos = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("\nDeseja fazer uma retirada ?:\n0 - Não desejo retirar\nDigite em quantos meses você deseja retirar.");
-        int retirada = int.Parse(Console.ReadLine());
-        
-        
-        var data_atual = DateTime.Today;
-        
-        decimal retirada_valor = 0;
-        
-        if (retirada > 0)
+        Console.Write("Informe o valor que você tem agora: ");
+        if (!double.TryParse(Console.ReadLine(), out double valorInicial) || valorInicial <= 0)
         {
-            Console.WriteLine("\nInforme quanto deseja retirar:");
-            retirada_valor = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Valor inválido.");
+            return;
         }
 
-        int meses = anos * 12;
-        decimal rendaAcumulada = inicial;
-        decimal rendLiquido = 0;
-
-        Console.WriteLine("+============================================================+");
-        Console.WriteLine("MÊS\tTAXA_JUROS\tRENDIMENTO\tREND.LIQUIDO\tRENDA_ACUMULADA");
-        Console.WriteLine("+============================================================+");
-
-        Console.WriteLine($"0|\t{taxa:P2}|\t{0:C2}|\t{0:C2}|\t{rendaAcumulada:C2}");
-
-        for (int i = 1; i <= meses; i++)
+        Console.Write("Informe a taxa de juros mensal (em %): ");
+        if (!double.TryParse(Console.ReadLine(), out double taxaMensal) || taxaMensal < 0)
         {
-            // Calcula o rendimento do mês atual
-            decimal rendimento = rendaAcumulada * taxa;
-            
-            // Adiciona o rendimento à renda acumulada
-            rendaAcumulada += rendimento;
-            
-            // Calcula o rendimento líquido (total acumulado - valor inicial)
-            rendLiquido +=  rendimento;
-            
-            // Realiza a retirada se for o mês especificado
-            if (i == retirada)
+            Console.WriteLine("Taxa inválida.");
+            return;
+        }
+
+        Console.Write("Informe a quantidade de meses: ");
+        if (!int.TryParse(Console.ReadLine(), out int meses) || meses < 0)
+        {
+            Console.WriteLine("Quantidade de meses inválida.");
+            return;
+        }
+
+        Console.Write("Informe a quantidade de dias adicionais: ");
+        if (!int.TryParse(Console.ReadLine(), out int dias) || dias < 0)
+        {
+            Console.WriteLine("Quantidade de dias inválida.");
+            return;
+        }
+
+        Console.WriteLine("\nDeseja fazer uma retirada?");
+        Console.WriteLine("0 - Não desejo retirar");
+        Console.Write("Ou informe em qual mês deseja retirar: ");
+        if (!int.TryParse(Console.ReadLine(), out int retiradaMes) || retiradaMes < 0)
+        {
+            Console.WriteLine("Entrada inválida.");
+            return;
+        }
+
+        if (retiradaMes > 0)
+        {
+            Console.Write("Informe quanto deseja retirar: ");
+            if (!decimal.TryParse(Console.ReadLine(), out retiradaValor) || retiradaValor < 0)
             {
-                rendaAcumulada -= retirada_valor;
-                Console.WriteLine($"\n+=============================================+\n-{retirada_valor:C2} retirado no mês {i}\n+=====================================================+");
+                Console.WriteLine("Valor de retirada inválido.");
+                return;
+            }
+        }
+
+        DateTime dataAtual = DateTime.Today;
+        double taxaAnual = taxaMensal * 12;
+        double taxaDiaria = 1 + (taxaAnual / 100) / 365;
+
+        valorAtual = valorInicial;
+
+        Console.WriteLine("\nMês | Data        | Valor Anterior | Juros no Período | Valor Acumulado");
+        Console.WriteLine("--------------------------------------------------------------------------");
+        Console.WriteLine($" 0  | {dataAtual:dd/MM/yyyy} | R$ {valorInicial:F2}       | R$ 0.00             | R$ {valorInicial:F2}");
+
+        for (int mes = 1; mes <= meses; mes++)
+        {
+            DateTime dataAnterior = dataAtual;
+            dataAtual = dataAtual.AddMonths(1);
+            int diasNoPeriodo = (dataAtual - dataAnterior).Days;
+
+            double valorAnterior = valorAtual;
+            valorAtual = valorAtual * Math.Pow(taxaDiaria, diasNoPeriodo);
+            double jurosNoPeriodo = valorAtual - valorAnterior;
+
+            if (mes == retiradaMes)
+            {
+                valorAtual -= (double)retiradaValor;
+                if (valorAtual < 0) valorAtual = 0;
+                Console.WriteLine("\n+========================================================+");
+                Console.WriteLine($"Retirada de :R${retiradaValor}");
+                Console.WriteLine("\n+========================================================+");
+
             }
 
-            Console.WriteLine($"{i}|\t{taxa:P2}|\t{rendimento:C2}|\t{rendLiquido:C2}|\t{rendaAcumulada:C2}");
+            Console.WriteLine($"{mes,3} | {dataAtual:dd/MM/yyyy} | R$ {valorAnterior:F2}       | R$ {jurosNoPeriodo:F2}         | R$ {valorAtual:F2}");
         }
-    
 
+        // Aplica os dias adicionais se houver
+        if (dias > 0)
+        {
+            double valorAnterior = valorAtual;
+            valorAtual *= Math.Pow(taxaDiaria, dias);
+            double jurosDias = valorAtual - valorAnterior;
 
-
-    } 
+            DateTime dataFinal = dataAtual.AddDays(dias);
+            Console.WriteLine($"{meses + 1,3} | {dataFinal:dd/MM/yyyy} | R$ {valorAnterior:F2}       | R$ {jurosDias:F2}         | R$ {valorAtual:F2}");
+        }
+    }
 }
