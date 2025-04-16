@@ -80,8 +80,27 @@ class Program
                     break;
 
                 case "3":
-                    Mesa03.EX();
+                    Console.WriteLine("Informe qual exercicio Você deseja:");
+                    Console.WriteLine("1 - EX 01");
+                    Console.WriteLine("2 - EX 02 E 03");
                     
+                    var opcao_3 = Console.ReadLine();
+
+                    switch (opcao_3)
+                    {   
+                        
+                        case "1":
+                            Mesa03_01.EX01();
+                            break;
+                        
+                        case "2":
+                            Mesa03_02_03.EX02_03();
+                            break;
+
+                        default:
+                            Console.WriteLine("Caracter informado não suportado.");
+                            break;
+                    }
                     break;
                 
                 default:
